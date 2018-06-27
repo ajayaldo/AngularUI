@@ -7,7 +7,7 @@ import { Observable } from "rxjs/Rx";
 @Injectable()
 export class PaymentService {
   readonly rootUrl = "http://localhost:54808";
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   submitPayment(paymentData: Paymentdata) {
     const body: Paymentdata = {
@@ -17,7 +17,7 @@ export class PaymentService {
       amount: paymentData.amount,
       reference: paymentData.reference
     };
-
+      
     return this.http
       .post(this.rootUrl + "/payment", body)
       .map((res: Response) => {

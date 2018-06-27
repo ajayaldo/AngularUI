@@ -7,7 +7,13 @@ export class LoggerService {
 
   constructor() { }
 
-  log(logLevel: string, log: string) {
-    console.log(logLevel + " : " + log);
+  log(logLevel: string, log: string, obj?: object) {
+    var logStr = logLevel+" : " + log;
+
+    console.log({
+      log:logStr,
+      object: obj
+    } );
+    
   }
 }
