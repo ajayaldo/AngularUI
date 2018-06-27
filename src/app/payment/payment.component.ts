@@ -27,12 +27,11 @@ export class PaymentComponent implements OnInit {
 
     this.paymentService.submitPayment(form.value).subscribe(
       () => {
-
+        form.reset();
         this.logger.log("Info", "Posting data to server success");
         this.toastr.success("Success", "Payment");
       },
       () => {
-
         this.logger.log("Error", "Posting data to server failed");
         this.toastr.error("Failed", "Payment");
       }
